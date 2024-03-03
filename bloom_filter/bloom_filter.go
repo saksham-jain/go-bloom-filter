@@ -9,7 +9,7 @@ type bloomFilter struct {
 	bitArr       []uint32
 }
 
-func New(size uint32, hashStrategy hash_strategy.HashStrategyInterface) FilterInterface {
+func NewMurmurHashStrategy(size uint32, hashStrategy hash_strategy.HashStrategyInterface) FilterInterface {
 	bitArr := make([]uint32, size)
 	return &bloomFilter{
 		hashStrategy: hashStrategy,

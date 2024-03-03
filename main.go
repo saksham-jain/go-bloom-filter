@@ -10,7 +10,7 @@ func main() {
 	var isPresent bool
 	size := uint32(4)
 	hash_strategy := hs.New(size)
-	bloomFilter := bf.New(size, hash_strategy)
+	bloomFilter := bf.NewMurmurHashStrategy(size, hash_strategy)
 	bloomFilter.Set("Banana")
 	fmt.Printf("bloomFilter: %+v\n", bloomFilter)
 	isPresent, _ = bloomFilter.IsPresent("Banana")
